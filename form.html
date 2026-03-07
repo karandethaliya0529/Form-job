@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Form</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+
+<body>
+
+    <h1>Job Application Form</h1>
+
+    <form onsubmit="return validateForm()">
+        <fieldset>
+            <legend>Basic Details</legend>
+            <table border="0">
+                <tr>
+                    <td>
+                        <label for="firstName">First Name</label>
+                        <input type="text" name="firstName" id="firstName">
+                        <span class="error" id="firstNameError"></span>
+                    </td>
+                    <td>
+                        <label for="lastName">Last Name</label>
+                        <input type="text" name="lastName" id="lastName">
+                        <span class="error" id="lastNameError"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="designation">Designation</label>
+                        <input type="text" name="designation" id="designation">
+                        <span class="error" id="designationError"></span>
+                    </td>
+                    <td>
+                        <label for="address1">Address Line 1</label>
+                        <input type="text" name="address1" id="address1">
+                        <span class="error" id="address1Error"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="email">Email</label>
+                        <input type="text" name="email" id="email">
+                        <span class="error" id="emailError"></span>
+                    </td>
+                    <td>
+                        <label for="address2">Address Line 2</label>
+                        <input type="text" name="address2" id="address2">
+                        <span class="error" id="address2Error"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="phoneNumber">Phone Number</label>
+                        <input type="text" name="phoneNumber" id="phoneNumber">
+                        <span class="error" id="phoneNumberError"></span>
+                    </td>
+                    <td>
+                        <label for="city">City</label>
+                        <input type="text" name="city" id="city">
+                         <span class="error" id="cityError"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Gender :
+                        <input type="radio" id="male" name="gender" value="male">
+                        <label for="male">male</label>
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female">Female</label>
+                        <span class="error" id="genderError"></span>
+                    </td>
+                    <td>
+                        <label for="state">State</label>
+                        <select name="state" id="state">
+                            <option value="Andhra Pradesh">Andhra Pradesh</option>
+                            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                            <option value="Assam">Assam</option>
+                            <option value="Bihar">Bihar</option>
+                            <option value="Chhattisgarh">Chhattisgarh</option>
+                            <option value="Goa">Goa</option>
+                            <option value="Gujarat" selected>Gujarat</option>
+                            <option value="Haryana">Haryana</option>
+                            <option value="Himachal Pradesh">Himachal Pradesh</option>
+                            <option value="Jharkhand">Jharkhand</option>
+                            <option value="Karnataka">Karnataka</option>
+                            <option value="Kerala">Kerala</option>
+                            <option value="Madhya Pradesh">Madhya Pradesh</option>
+                            <option value="Maharashtra">Maharashtra</option>
+                            <option value="Manipur">Manipur</option>
+                            <option value="Meghalaya">Meghalaya</option>
+                            <option value="Mizoram">Mizoram</option>
+                            <option value="Nagaland">Nagaland</option>
+                            <option value="Odisha">Odisha</option>
+                            <option value="Punjab">Punjab</option>
+                            <option value="Rajasthan">Rajasthan</option>
+                            <option value="Sikkim">Sikkim</option>
+                            <option value="Tamil Nadu">Tamil Nadu</option>
+                            <option value="Telangana">Telangana</option>
+                            <option value="Tripura">Tripura</option>
+                            <option value="Uttar Pradesh">Uttar Pradesh</option>
+                            <option value="Uttarakhand">Uttarakhand</option>
+                            <option value="West Bengal">West Bengal</option>
+                            <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                            <option value="Chandigarh">Chandigarh</option>
+                            <option value="Dadra and Nagar Haveli and Daman and Diu">Dadra and Nagar Haveli and Daman
+                                and Diu</option>
+                            <option value="Lakshadweep">Lakshadweep</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Puducherry">Puducherry</option>
+                        </select>
+                        <span class="error" id="stateError"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="relationshipStatus">Relationship Status</label>
+                        <select name="relationshipStatus" id="relationshipStatus">
+                            <option value="married">Married</option>
+                            <option value="single">Single</option>
+                            <option value="divorced">Divorced</option>
+                            <option value="widowed">Widowed</option>
+                        </select>
+                        <span class="error" id="relationshipStatusError"></span>
+                    </td>
+                    <td>
+                        <label for="zipcode">Zipcode</label>
+                        <input type="text" name="zipcode" id="zipcode">
+                        <span class="error" id="zipcodeError"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <label for="dob">Date of Birth</label>
+                        <input type="date" name="dob" id="dob">
+                        <span class="error" id="dobError"></span>
+                    </td>
+                </tr>
+            </table>
+
+
+        </fieldset>
+        <fieldset>
+            <legend>
+                Education Details
+                <input type="button" value="add" id="educationAdd">
+                <input type="button" value="remove" id="educationRemove">
+            </legend>
+            <table border="0" id="education">
+                <tr>
+                    <td>#</td>
+                    <td>Course</td>
+                    <td>Passing Year</td>
+                    <td>Uni/Board</td>
+                    <td>Percentage/CGPA</td>
+                </tr>
+            </table>
+            <span class="error" id="educationError"></span>
+        </fieldset>
+        <fieldset>
+            <legend>
+                Experience Details
+                <input type="button" value="add" id="experienceAdd">
+                <input type="button" value="remove" id="experienceRemove">
+            </legend>
+            <table border="0" id="experience">
+                <tr>
+                    <td>#</td>
+                    <td>Company</td>
+                    <td>From date</td>
+                    <td>To Date</td>
+                    <td>Package</td>
+                    <td>Reason Leave</td>
+                    <td>Ref. Contact No.</td>
+                    <td>Ref. contact Name</td>
+                </tr>
+            </table>
+            <span class="error" id="experienceError"></span>
+        </fieldset>
+        <table>
+            <tr>
+                <td>
+                    <fieldset>
+                        <legend>
+                            Language Known
+                        </legend>
+                        <table border="0" id="language">
+                            <tr>
+                                <td>#</td>
+                                <td>Lang. Name</td>
+                                <td>Read</td>
+                                <td>Write</td>
+                                <td>Speak</td>
+                            </tr>
+                        </table>
+                        <span class="error" id="languageError"></span>
+                    </fieldset>
+                </td>
+                <td>
+                    <fieldset>
+                        <legend>
+                            Thechnologies Known
+                        </legend>
+                        <table border="0" id="tech">
+                            <tr>
+                                <td>#</td>
+                                <td>Tech Name</td>
+                                <td>Level</td>
+                            </tr>
+                        </table>
+                        <span class="error" id="techError"></span>
+                    </fieldset>
+                </td>
+            </tr>
+        </table>
+        <fieldset>
+            <legend>
+                Reference Contact
+                <input type="button" value="add" id="refAdd">
+                <input type="button" value="remove" id="refRemove">
+            </legend>
+            <table border="0" id="ref">
+                <tr>
+                    <td>#</td>
+                    <td>Name</td>
+                    <td>Contact No.</td>
+                    <td>Relation</td>
+                </tr>
+            </table>
+            <span class="error" id="refError"></span>
+        </fieldset>
+        <fieldset>
+            <legend>
+                Preferences
+            </legend>
+            <table border="0" id="preferences">
+                <tr>
+                    <td rowspan="3">
+                        <label for="prefredLocation">Prefered Location</label>
+                        <ul id="locationList"></ul>
+                        <span class="error" id="prefredLocationError"></span>
+                    </td>
+                    <td>
+                        <label for="noticePeriod">Notice Period</label>
+                        <input type="text" name="noticePeriod" id="noticePeriod">
+                        <span class="error" id="noticePeriodError"></span>
+                    </td>
+                    <td>
+                        <label for="department">Department</label>
+                        <select name="department" id="department">
+                            <option value="development">Development</option>
+                            <option value="web-development">Web Development</option>
+                            <option value="mobile-app">Mobile App Development</option>
+                            <option value="ui-ux-design">UI/UX Design</option>
+                            <option value="digital-marketing">Digital Marketing</option>
+                            <option value="qa-testing">QA & Testing</option>
+                            <option value="dedicated-hiring">Dedicated Hiring</option>
+                            <option value="it-consulting">IT Consulting</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="exCtc">Expected CTC</label>
+                        <input type="text" name="exCtc" id="exCtc">
+                        <span class="error" id="exCtcError"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="curCtc">Current CTC</label>
+                        <input type="text" name="curCtc" id="curCtc">
+                        <span class="error" id="curCtcError"></span>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+
+        <table border="0">
+            <tr>
+                <td><input type="submit" name="submit" id="submit" value="submit"></td>
+                <td><input type="reset" name="reset" id="reset" value="reset"></td>
+            </tr>
+        </table>
+
+    </form>
+
+    <script src="form.js"></script>
+</body>
+
+</html>
