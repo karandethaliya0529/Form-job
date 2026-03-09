@@ -188,5 +188,3 @@ CREATE TABLE preferred_locations(
 );
 
 CREATE INDEX idx_pref_applicant ON preferred_locations(applicant_id);
-
-drop table preferences;
